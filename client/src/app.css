@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-mint-50: #ecfdf7;
+    --color-mint-100: #d1faeb;
+    --color-mint-200: #a7f3d7;
+    --color-mint-300: #6ee7bb;
+    --color-mint-400: #34d399;
+    --color-mint-500: #10b97b;
+    --color-mint-600: #059661;
+    --color-mint-700: #04784e;
+    --color-mint-800: #065f3f;
+    --color-mint-900: #064e34;
+    --color-mint-950: #022c1d;
+}
+
+@layer base {
+    body {
+        @apply min-h-dvh bg-white dark:bg-mint-950/10;
+        /* @apply text-mint-950 dark:text-mint-50; */
+    }
+}
+
+@layer components {
+    input {
+        @apply rounded-md px-2 py-2;
+
+        @apply font-medium;
+        @apply bg-mint-200 border-mint-600;
+        @apply dark:bg-mint-100/10 dark:border-mint-300/10;
+    }
+
+    button {
+        @apply rounded-md px-2 py-2;
+        @apply font-semibold uppercase;
+        @apply bg-mint-500 text-white;
+        @apply border-mint-600 border;
+
+        @apply hover:cursor-pointer hover:bg-mint-600 active:bg-mint-700;
+    }
+
+    a {
+        @apply text-mint-950;
+    }
+
+    h1 {
+        @apply text-2xl font-semibold;
+    }
+
+    .field {
+        @apply flex flex-col gap-2;
+    }
+}
