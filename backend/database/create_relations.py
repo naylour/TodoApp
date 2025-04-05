@@ -15,6 +15,7 @@ def create_relations(connection: Connection):
                 note_id TEXT
             );
         ''')
+
         cursor.execute('''--sql
             CREATE TABLE
             IF NOT EXISTS

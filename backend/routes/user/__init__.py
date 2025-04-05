@@ -1,9 +1,11 @@
 from fastapi.routing import APIRouter
-from .model import User, UserCreate, UserPatch, UserDTO
-from database import connection
-from ulid import ULID
-from argon2 import PasswordHasher
-from datetime import datetime
+from database        import connection
+from ulid            import ULID
+from argon2          import PasswordHasher
+from datetime        import datetime
+
+# MODELS
+from .model import UserCreate, UserPatch, UserDTO
 
 hasher = PasswordHasher()
 

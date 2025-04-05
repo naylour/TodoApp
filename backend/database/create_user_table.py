@@ -1,9 +1,4 @@
 from sqlite3 import Connection, Error
-from datetime import datetime
-from ulid import ULID
-from argon2 import PasswordHasher
-
-hasher = PasswordHasher()
 
 def create_user_table(connection: Connection):
     try:
@@ -24,15 +19,7 @@ def create_user_table(connection: Connection):
             );
         ''')
 
-
         connection.commit()
-
-        # res = cursor.execute(f'''
-        #     INSERT INTO User (id, last_name, first_name, username, password, updated_at)
-        #     VALUES (?, ?, ?, ?, ?, ?) RETURNING changes();
-        # ''', (str(ULID()), None, 'bb', 'ggd', hasher.hash('datapassword'), datetime.now()))
-
-        # print(res.fetchall())
     except Error as error:
         print('[ USER ] Ошибка при обработке таблицы')
         print(error)
