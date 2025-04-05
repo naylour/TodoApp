@@ -25,7 +25,7 @@ async def user_create(data: UserCreate) -> UserDTO:
 
     cursor.execute(f'''
         INSERT INTO User (id, last_name, first_name, username, password, updated_at)
-        VALUES (?, ?, ?, ?, ?, ?) RETURNING changes();
+        VALUES (?, ?, ?, ?, ?, ?);
     ''', (str(ULID()), data.last_name, data.first_name, data.username, hasher.hash(data.password), datetime.now()))
 
     res = cursor.execute('''
