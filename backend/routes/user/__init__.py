@@ -29,8 +29,8 @@ async def user_create(data: UserCreate) -> UserDTO:
     ''', (str(ULID()), data.last_name, data.first_name, data.username, hasher.hash(data.password), datetime.now()))
 
     res = cursor.execute('''
-        SELECT id, last_name, first_name, username, updated_at FROM User WHERE username = 'ShahTheShah';
-    ''')
+        SELECT id, last_name, first_name, username, updated_at FROM User WHERE username = '?';
+    ''', (data.username))
 
     id, last_name, first_name, username, updated_at = res.fetchone()
 
