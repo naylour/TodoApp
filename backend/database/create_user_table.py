@@ -10,11 +10,11 @@ def create_user_table(connection: Connection):
             CREATE TABLE
             IF NOT EXISTS
             User (
-                id TEXT NOT NULL PRIMARY KEY,
-                last_name TEXT,
+                id         TEXT NOT NULL PRIMARY KEY,
+                last_name  TEXT,
                 first_name TEXT NOT NULL,
-                username TEXT NOT NULL UNIQUE,
-                password TEXT,
+                username   TEXT NOT NULL UNIQUE,
+                password   TEXT,
                 updated_at TEXT NOT NULL
             );
         ''')

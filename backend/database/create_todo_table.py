@@ -10,11 +10,11 @@ def create_todo_table(connection: Connection):
             CREATE TABLE
             IF NOT EXISTS
             Todo (
-                id TEXT NOT NULL PRIMARY KEY,
-                title TEXT NOT NULL,
-                description TEXT,
+                id           TEXT NOT NULL PRIMARY KEY,
+                title        TEXT NOT NULL,
+                description  TEXT,
                 is_completed INTEGER
-                updated_at TEXT NOT NULL
+                updated_at   TEXT NOT NULL
             );
         ''')
 

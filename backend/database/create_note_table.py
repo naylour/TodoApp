@@ -10,9 +10,9 @@ def create_note_table(connection: Connection):
             CREATE TABLE
             IF NOT EXISTS
             Note (
-                id TEXT NOT NULL PRIMARY KEY,
-                title TEXT NOT NULL,
-                content TEXT,
+                id         TEXT NOT NULL PRIMARY KEY,
+                title      TEXT NOT NULL,
+                content    TEXT,
                 updated_at TEXT NOT NULL
             );
         ''')

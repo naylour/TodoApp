@@ -10,7 +10,7 @@ def create_relations(connection: Connection):
             CREATE TABLE
             IF NOT EXISTS
             UserNote (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id      INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id TEXT,
                 note_id TEXT
             );
@@ -20,7 +20,7 @@ def create_relations(connection: Connection):
             CREATE TABLE
             IF NOT EXISTS
             UserTodo (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id      INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id TEXT,
                 todo_id TEXT
             );
